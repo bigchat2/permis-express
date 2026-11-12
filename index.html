@@ -392,9 +392,11 @@
 
             const phoneNumber = "33757752809";
             
-            const message = `Bonjour Permis Express,%0A%0AJe souhaite passer une commande pour :%0A- *Formule* : ${formule}%0A- *Nom & Prénom* : ${nom}%0A- *Téléphone* : ${phone}%0A- *Ville* : ${ville}%0A%0AMerci de me prendre en charge pour la suite des démarches !`;
+            const text = `Bonjour Permis Express,\n\nJe souhaite passer une commande pour :\n- *Formule* : ${formule}\n- *Nom & Prénom* : ${nom}\n- *Téléphone* : ${phone}\n- *Ville* : ${ville}\n\nMerci de me prendre en charge pour la suite des démarches !`;
 
-            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+            const encodedMessage = encodeURIComponent(text);
+
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
         });
     </script>
 </body>
